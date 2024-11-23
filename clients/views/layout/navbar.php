@@ -1,5 +1,5 @@
 <?php
-// Thêm ở đầu file navbar.php
+// models trả về dữ liẹu một lần
 require_once './models/danhmuc.php';
 $modelDanhMuc = new DanhMuc();
 $listdm = $modelDanhMuc->getAllDanhMuc();
@@ -38,7 +38,7 @@ $listdm = $modelDanhMuc->getAllDanhMuc();
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0">
-                        <a href="./views/home.php" class="nav-item nav-link active">Trang chủ</a>
+                        <a href="http://localhost/bookstower/clients/" class="nav-item nav-link active">Trang chủ</a>
                         <a href="./views/sanpham.php" class="nav-item nav-link">Sản phẩm</a>
                         <a href="http://localhost/bookstower/clients/views/contact.php" class="nav-item nav-link">Liên hệ</a>
                     </div>
