@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         header("Location: http://localhost/bookstower/clients");
         exit;
     } else {
-        $error = "Tên đăng nhập hoặc mật khẩu không đúng.";
+        $error = "Tên đăng nhập hoặc mật khẩu không đúng. Lỗi";
     }
 }
 ?>
