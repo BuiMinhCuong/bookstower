@@ -1,10 +1,9 @@
 <?php
 session_start();
 
-// Lấy danh sách tài khoản (giả lập)
+// Lấy danh sách tài khoản
 $users = isset($_SESSION['users']) ? $_SESSION['users'] : [
-    "admin" => ["password" => "admin123", "fullname" => "Admin User", "email" => "admin@example.com"],
-    "user1" => ["password" => "password1", "fullname" => "User One", "email" => "user1@example.com"]
+    
 ];
 
 // Xử lý đăng nhập
@@ -15,8 +14,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Kiểm tra tài khoản
     if (isset($users[$username]) && $users[$username]['password'] === $password) {
         $success = true;
-        $welcomeMessage = "Chào mừng, " . htmlspecialchars($users[$username]['fullname']) . "!";
+        $welcomeMessage = "Chào mừng, " . htmlspecialchars($users[$username]['fullname']) . "! Email: " . htmlspecialchars($users[$username]['email']) . " - SĐT: " . htmlspecialchars($users[$username]['phone']);
         header("Location: http://localhost/bookstower/clients");
+        exit;
     } else {
         $error = "Tên đăng nhập hoặc mật khẩu không đúng.";
     }
