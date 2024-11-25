@@ -7,10 +7,10 @@
                 <a class="navbar-brand" href="./"><img src="../admin/assets/images/logo.jpg" alt="Logo" style="width:150px; height:60px; margin-top:-6px ;"></a>
                 </h1>
             </a>
-            <p>Dolore erat dolor sit lorem vero amet. Sed sit lorem magna, ipsum no sit erat lorem et magna ipsum dolore amet erat.</p>
-            <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>123 Street, New York, USA</p>
-            <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>info@example.com</p>
-            <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+012 345 67890</p>
+            <p>Bookstower nơi những giấc mơ bắt đầu</p>
+            <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>33 Phương Canh-Hà Nội</p>
+            <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>hieupnph50045@gmail.com</p>
+            <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>0364598280</p>
         </div>
         <div class="col-lg-8 col-md-12">
             <div class="row">
@@ -52,19 +52,8 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row border-top border-light mx-xl-5 py-4">
-        <div class="col-md-6 px-xl-0">
-            <p class="mb-md-0 text-center text-md-left text-dark">
-                &copy; <a class="text-dark font-weight-semi-bold" href="#">Your Site Name</a>. All Rights Reserved. Designed by
-                <a class="text-dark font-weight-semi-bold" href="https://htmlcodex.com">HTML Codex</a><br>
-                Distributed By <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
-            </p>
-        </div>
-        <div class="col-md-6 px-xl-0 text-center text-md-right">
-            <img class="img-fluid" src="clients/assets/img/payments.png" alt="Payment Methods">
-        </div>
-    </div>
+    
+    <marquee style="font-size: 20px;"> Nhóm 1 cảm ơn thầy cô đã xem trang web của chúng em</marquee> 
 </div>
 <!-- Footer End -->
 
