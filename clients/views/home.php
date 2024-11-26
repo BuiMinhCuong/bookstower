@@ -1,4 +1,9 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
+<style>
+    
+</style>
 <!-- Products Start -->
 <div class="container-fluid pt-5">
     <div class="text-center mb-4">
@@ -24,8 +29,8 @@
                 </div>
                 <div class="card-footer d-flex justify-content-between bg-light border" style="border-top: 2px solid #007bff; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;">
                     <a href="?act=chitietsp&id=<?php echo $sanpham['id'] ?>" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                    <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
-                </div>
+                    <a href="javascript:void(0);" class="btn btn-sm text-dark p-0 add-to-cart-btn"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                    </div>
             </div>
         </div>
         <?php 
@@ -36,6 +41,24 @@
         endforeach 
         ?>
 
+<div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cartModalLabel">Giỏ hàng của bạn</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="cart-items"></div>
+            <span id="total-price">Tổng tiền: 0 đ</span>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tiếp tục mua</button>
+                <button type="button" class="btn btn-primary">Thanh toán</button>
+            </div>
+        </div>
+    </div>
+</div>
 
         
 </div>
@@ -87,5 +110,95 @@ Bookstower cam kết bảo hành đầy đủ cho các sản phẩm đã bán. C
 Bookstower luôn nỗ lực mang đến cho khách hàng trải nghiệm mua sắm hoàn hảo với những dịch vụ hậu mãi tận tâm nhất. Hãy chọn Bookstower, nơi bạn được quan tâm không chỉ trong lúc mua sắm mà còn cả sau khi sản phẩm đã đến tay!</p>
  </div>
    
+<script>
+   document.addEventListener('DOMContentLoaded', function () {
+    const cartItemsContainer = document.getElementById('cart-items'); // Container giỏ hàng
+    const totalPriceElement = document.getElementById('total-price'); // Hiển thị tổng tiền
+    const cartDataKey = 'cartData'; // Key lưu trữ giỏ hàng trong localStorage
+    let cartData = JSON.parse(localStorage.getItem(cartDataKey)) || []; // Lấy dữ liệu từ localStorage
 
-    
+    // Hàm cập nhật giao diện giỏ hàng
+    function renderCart() {
+        cartItemsContainer.innerHTML = '';
+        let totalPrice = 0;
+
+        cartData.forEach((item, index) => {
+            const cartItemHTML = `
+                <div class="cart-item d-flex justify-content-between align-items-center mb-3" data-index="${index}">
+                    <div class="d-flex align-items-center">
+                        <img src="${item.image}" class="img-thumbnail mr-3" style="width: 50px; height: 50px; object-fit: cover;">
+                        <span>${item.title}</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <button class="btn btn-sm btn-outline-secondary quantity-decrease">-</button>
+                        <span class="mx-2">${item.quantity}</span>
+                        <button class="btn btn-sm btn-outline-secondary quantity-increase">+</button>
+                    </div>
+                    <span>${(item.price * item.quantity).toLocaleString()} đ</span>
+                    <button class="btn btn-danger btn-sm remove-item-btn">Xóa</button>
+                </div>
+            `;
+            cartItemsContainer.innerHTML += cartItemHTML;
+            totalPrice += item.price * item.quantity;
+        });
+
+        totalPriceElement.textContent = `Tổng tiền: ${totalPrice.toLocaleString()} đ`;
+    }
+
+    // Thêm sản phẩm vào giỏ hàng
+    document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+        button.addEventListener('click', function () {
+            const productCard = this.closest('.product-item');
+            if (!productCard) {
+                console.error('Không tìm thấy thẻ .product-item');
+                return;
+            }
+
+            const title = productCard.querySelector('h6')?.textContent || 'Sản phẩm không tên';
+            const priceText = productCard.querySelector('h3')?.textContent || '0 đ';
+            const price = parseInt(priceText.replace(/\D/g, ''), 10);
+            const image = productCard.querySelector('img')?.src || '';
+
+            if (!price || !image) {
+                console.error('Thông tin sản phẩm không đầy đủ:', { title, price, image });
+                return;
+            }
+
+            // Kiểm tra sản phẩm đã tồn tại
+            const existingProduct = cartData.find(item => item.title === title);
+            if (existingProduct) {
+                existingProduct.quantity++;
+            } else {
+                cartData.push({ title, price, image, quantity: 1 });
+            }
+
+            localStorage.setItem(cartDataKey, JSON.stringify(cartData)); // Lưu lại giỏ hàng
+            renderCart(); // Cập nhật giao diện
+            $('#cartModal').modal('show'); // Mở modal
+        });
+    });
+
+    // Xử lý sự kiện trong giỏ hàng
+    cartItemsContainer.addEventListener('click', function (e) {
+        const index = e.target.closest('.cart-item')?.getAttribute('data-index');
+        if (e.target.classList.contains('quantity-increase')) {
+            cartData[index].quantity++;
+        } else if (e.target.classList.contains('quantity-decrease')) {
+            if (cartData[index].quantity > 1) {
+                cartData[index].quantity--;
+            } else {
+                cartData.splice(index, 1); // Xóa nếu số lượng về 0
+            }
+        } else if (e.target.classList.contains('remove-item-btn')) {
+            cartData.splice(index, 1); // Xóa sản phẩm
+        }
+        localStorage.setItem(cartDataKey, JSON.stringify(cartData)); // Cập nhật giỏ hàng
+        renderCart(); // Cập nhật giao diện
+    });
+
+    // Hiển thị lại giỏ hàng khi tải trang
+    renderCart();
+});
+
+
+</script>

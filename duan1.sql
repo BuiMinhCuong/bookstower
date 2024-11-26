@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 19, 2024 at 01:35 PM
+-- Generation Time: Nov 20, 2024 at 05:47 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -40,10 +40,10 @@ CREATE TABLE `authors` (
 --
 
 INSERT INTO `authors` (`id`, `name`, `bio`, `created_at`, `updated_at`) VALUES
-(6, 'Sunrise', 'Tác giả Sunrise một huyềnt hoại của nhật bản', '', ''),
-(7, 'Akira Toriyama', 'Bộ truyện tranh luôn nằm ở top đầu thế giới Dragon ball', '', '');
-
-
+(3, 'Eiichiro Oda', 'Tác giả nổi tiếng của One Piece, sinh năm 1975', '2024-11-15 17:41:36', '2024-11-15 17:41:36'),
+(5, 'Akira Toriyama', 'Cha đẻ của Dragon Ball, sinh năm 1955', '2024-11-15 17:41:36', '2024-11-15 17:41:36'),
+(6, 'Sunrise', 'Tác giả Sunrise, một huyền thoại của Nhật Bản', NULL, NULL),
+(7, 'Akira Toriyama', 'Bộ truyện tranh luôn nằm ở top đầu thế giới: Dragon Ball', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -67,7 +67,7 @@ CREATE TABLE `banners` (
 --
 
 INSERT INTO `banners` (`ID`, `Title`, `Description`, `Img`, `Status`, `Position`, `CreatedAt`, `UpdatedAt`) VALUES
-(1, 'vvfdsvdv', 'sdsfdsf', '../uploads/banner/1732018701_466964285_549571631227324_6373781640164775592_n.jpg', 1, 0, '2024-11-19 12:18:21', '2024-11-19 12:18:21');
+(1, 'Goku six ', 'Ảnh goku', '../uploads/banner/1732075222_OIP (5).jfif', 1, 1, '2024-11-19 12:18:21', '2024-11-20 04:00:22');
 
 -- --------------------------------------------------------
 
@@ -122,16 +122,16 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `description`, `created_at`, `updated_at`) VALUES
-(8, 'Hành động', 'Thể loại manga với những pha hành động gay cấn', '2024-11-15 17:43:38', '2024-11-15 17:43:38'),
-(9, 'Phiêu lưu', 'Những cuộc phiêu lưu kỳ thú và hấp dẫn', '2024-11-15 17:43:38', '2024-11-15 17:43:38'),
-(10, 'Hài hước', 'Manga mang tính giải trí và hài hước', '2024-11-15 17:43:38', '2024-11-15 17:43:38'),
-(11, 'Kinh dị', 'Thể loại manga kinh dị, rùng rợn', '2024-11-15 17:43:38', '2024-11-15 17:43:38'),
-(12, 'Fantasy', 'Thế giới kỳ ảo với phép thuật', '2024-11-15 17:43:38', '2024-11-15 17:43:38'),
+(8, 'Hành động', 'Dành cho những người thích combat và hành động nhanh', '2024-11-15 17:43:38', '2024-11-19 21:24:50'),
+(9, 'Mạo hiểm', 'Tìm kiếm những trân trời cùng những câu truyện mới\r\n', '2024-11-15 17:43:38', '2024-11-19 21:25:34'),
+(10, 'Hài hước', 'Giải trí,vui tươi', '2024-11-15 17:43:38', '2024-11-19 21:25:51'),
+(11, 'Kinh dị', 'Ám ảnh ,ghê rợn', '2024-11-15 17:43:38', '2024-11-19 21:26:02'),
+(12, 'Fantasy', 'Nơi những giấc mơ cũng sẽ thành hiện thực', '2024-11-15 17:43:38', '2024-11-19 21:26:26'),
 (13, 'Thể thao', 'Manga về các môn thể thao', '2024-11-15 17:43:38', '2024-11-15 17:43:38'),
-(14, 'Học đường', 'Câu chuyện trong môi trường học đường', '2024-11-15 17:43:38', '2024-11-15 17:43:38'),
+(14, 'Cấp 3', 'Những câu truyện học đường vô vàn kỉ niệm', '2024-11-15 17:43:38', '2024-11-19 21:28:46'),
 (15, 'Siêu nhiên', 'Manga về các yếu tố siêu nhiên', '2024-11-15 17:43:38', '2024-11-15 17:43:38'),
-(16, 'Tình cảm', 'Những câu chuyện về tình yêu', '2024-11-15 17:43:38', '2024-11-15 17:43:38'),
-(17, 'Trinh thám', 'Manga về các vụ án và điều tra', '2024-11-15 17:43:38', '2024-11-15 17:43:38');
+(16, 'emotion', 'muôn vàn cảm xúc vui-buồn luôn xen lẫn', '2024-11-15 17:43:38', '2024-11-19 21:27:42'),
+(17, 'Trinh thám', 'Các câu chuyện kì bí, những vụ á bí ẩn', '2024-11-15 17:43:38', '2024-11-19 21:28:18');
 
 -- --------------------------------------------------------
 
@@ -159,16 +159,14 @@ CREATE TABLE `comics` (
 --
 
 INSERT INTO `comics` (`id`, `title`, `author_id`, `category_id`, `description`, `publication_date`, `price`, `original_price`, `stock_quantity`, `image`, `created_at`, `updated_at`) VALUES
-(68, 'One Piece - Tập 100', 5, 10, 'Cuộc chiến ở Wano quốc đạt đến đỉnh điểm', '2024-01-15', '25000.00', '30000.00', 100, '../uploads/product/1731693203_vivoy100.jpg', '2024-11-15 17:52:47', '2024-11-15 17:53:23'),
-(70, 'Dragon Ball Super - Vol.20', 3, 8, 'Goku và những trận chiến mới', '2024-01-17', '26000.00', '31000.00', 90, '../uploads/product/1731693220_ip14plus.jpg', '2024-11-15 17:52:47', '2024-11-15 17:53:40'),
-(71, 'Hunter x Hunter - Tập 37', 7, 11, 'Cuộc phiêu lưu trong thế giới Dark Continent', '2024-01-18', '28000.00', '33000.00', 75, '../uploads/product/1731693241_ip12.jpg', '2024-11-15 17:52:47', '2024-11-15 17:54:01'),
-(72, 'Attack on Titan - Tập Cuối', 6, 13, 'Kết thúc của cuộc chiến người và titan', '2024-01-19', '30000.00', '35000.00', 95, '../uploads/product/1731693251_ip1.jpg', '2024-11-15 17:52:47', '2024-11-15 17:54:11'),
-(73, 'Detective Conan - Tập 100', 2, 11, 'Vụ án mới của thám tử Conan', '2024-01-20', '24000.00', '29000.00', 88, '../uploads/product/1731693261_iphone-11-den-600x600.jpg', '2024-11-15 17:52:47', '2024-11-15 17:54:21'),
-(74, 'Fullmetal Alchemist - Perfect', 4, 8, 'Phiên bản đặc biệt với nội dung mở rộng', '2024-01-21', '35000.00', '40000.00', 70, '../uploads/product/1731693271_ip15promax.jpg', '2024-11-15 17:52:47', '2024-11-15 17:54:31'),
-(75, 'Bleach - TYBW Arc', 5, 11, 'Arc cuối cùng của series Bleach', '2024-01-22', '29000.00', '34000.00', 82, '../uploads/product/1731693279_ip15.jpg', '2024-11-15 17:52:47', '2024-11-15 17:54:39'),
-(76, 'Berserk - Deluxe Edition', 9, 13, 'Phiên bản deluxe với chất lượng cao', '2024-01-23', '40000.00', '45000.00', 60, '../uploads/product/1731693289_ip14.jpg', '2024-11-15 17:52:47', '2024-11-15 17:54:49'),
-(77, 'Monster - Perfect Edition', 7, 12, 'Ấn bản hoàn hảo của series Monster', '2024-01-24', '32000.00', '37000.00', 65, '../uploads/product/1731693297_ip1.jpg', '2024-11-15 17:52:47', '2024-11-15 17:54:57'),
-(78, 'bdjksd', 5, 15, 'fmnff', '2024-11-22', '236738.00', '384844.00', 11, '../uploads/product/1732000396_466964285_549571631227324_6373781640164775592_n.jpg', '2024-11-19 07:13:16', '2024-11-19 07:13:16');
+(68, 'One Piece tập 1200', 3, 9, 'Trận chiến tại vùng đảo nổi', '2024-01-15', '80000.00', '90000.00', 20, '../uploads/product/1732057672_OIP.jfif', '2024-11-15 17:52:47', '2024-11-19 23:13:36'),
+(70, 'Dragon Ball Super -Chiến tranh vũ trụ', 5, 15, 'trận chiến giữ những vũ trụ, liệu cuộc hành trình mới này sẽ đem lại gì cho goku và những người bạn', '2024-01-17', '50000.00', '120000.00', 15, '../uploads/product/1732057838_OIP (1).jfif', '2024-11-15 17:52:47', '2024-11-19 23:10:57'),
+(79, 'Gundam buit -tập 1', 6, 12, 'Bộ phim gundam huyền thoại đã là tuổi thơ của biết bao độc giả nay đã quay lại.', '2024-11-05', '150000.00', '200000.00', 50, '../uploads/product/1732057978_OIP (2).jfif', '2024-11-19 23:12:58', '2024-11-19 23:12:58'),
+(80, 'Gundam buit -tập 2', 6, 12, 'Tập 2 của gundam buit fighter', '2024-11-16', '140000.00', '200000.00', 50, '../uploads/product/1732058069_download.jfif', '2024-11-19 23:14:29', '2024-11-19 23:14:29'),
+(81, 'Gundam buit -tập 3', 6, 12, 'Gundam buit fighter tập ', '2024-11-17', '140000.00', '200000.00', 50, '../uploads/product/1732058118_download (1).jfif', '2024-11-19 23:15:18', '2024-11-19 23:15:18'),
+(82, 'Goku- bản năng vô cực', 7, 12, 'Trận chiến vô cực', '2024-11-03', '300000.00', '450000.00', 60, '../uploads/product/1732058603_OIP (3).jfif', '2024-11-19 23:23:23', '2024-11-19 23:23:23'),
+(83, 'Goku- bản năng vô cực 2', 7, 12, 'Bạn năng thức tỉnh??', '2024-11-01', '300000.00', '450000.00', 60, '../uploads/product/1732058631_OIP (4).jfif', '2024-11-19 23:23:51', '2024-11-19 23:23:51'),
+(84, 'Goku- bản năng vô cực last once', 7, 12, 'Trận chiến cuối cùng ', '2024-11-11', '350000.00', '490000.00', 40, '../uploads/product/1732058669_download (2).jfif', '2024-11-19 23:24:29', '2024-11-19 23:24:29');
 
 -- --------------------------------------------------------
 
@@ -193,10 +191,8 @@ CREATE TABLE `comic_sales` (
 --
 
 INSERT INTO `comic_sales` (`id`, `comic_id`, `sale_type`, `sale_value`, `start_date`, `end_date`, `status`, `created_at`, `updated_at`) VALUES
-(23, 75, 'percent', '4.00', '2024-11-18 00:00:00', '2024-11-21 00:00:00', 'pending', '2024-11-18 16:33:28', '2024-11-18 19:20:58'),
-(28, 71, 'percent', '1.00', '2024-11-19 00:00:00', '2024-11-22 00:00:00', 'active', '2024-11-18 19:50:05', '2024-11-18 19:50:05'),
 (33, 70, 'percent', '11.00', '2024-11-19 00:00:00', '2024-11-21 00:00:00', 'pending', '2024-11-18 20:30:39', '2024-11-18 20:30:39'),
-(35, 71, 'percent', '11.00', '2024-11-19 00:00:00', '2024-11-22 00:00:00', 'pending', '2024-11-18 20:42:10', '2024-11-18 20:42:10');
+(40, 80, 'percent', '20.00', '2024-11-20 00:00:00', '2024-11-30 00:00:00', 'active', '2024-11-20 04:04:33', '2024-11-20 04:06:37');
 
 -- --------------------------------------------------------
 
@@ -274,7 +270,7 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `user_id`, `order_date`, `total_amount`, `payment_status`, `payment_method`, `shipping_status`, `shipping_address`) VALUES
-(33, 64, '2024-11-17 14:30:31', '7767.00', 'processing', 'Internet Banking', 'pending', 'f'),
+(33, 64, '2024-11-17 14:30:31', '800000.00', 'processing', 'Internet Banking', 'pending', 'f'),
 (38, 64, '2024-11-18 17:29:09', '120000.00', 'processing', 'Credit Card', 'pending', 'hh');
 
 -- --------------------------------------------------------
@@ -296,9 +292,8 @@ CREATE TABLE `order_items` (
 -- Dumping data for table `order_items`
 --
 
-INSERT INTO `order_items` (`id`, `order_id`, `comic_id`, `quantity`, `unit_price`) VALUES
-(21, 33, 72, 2, '300000.00'),
-(26, 38, 68, 2, '300000.00');
+  INSERT INTO `order_items` (`id`, `order_id`, `comic_id`, `quantity`, `unit_price`) VALUES
+  (26, 38, 68, 2, '300000.00');
 
 -- --------------------------------------------------------
 
@@ -389,13 +384,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `phone`, `avatar`, `role`, `created_at`, `updated_at`) VALUES
-(1, 'hieu123', 'admin@gmail.com', '$2y$10$eH1X2wekZK5nXYel23Tsfu8zce7Ftzcft6FguFmA6WhR2QIApMnkO', '0364598280', '../uploads/user/default.jpg', 'admin', '2024-11-12 16:49:03', '2024-11-14 10:49:03'),
-(2, 'hien', 'admin1@gmail.com', '$2y$10$eH1X2wekZK5nXYel23Tsfu8zce7Ftzcft6FguFmA6WhR2QIApMnkO', '0123456789', '../uploads/user/default.jpg', 'user', '2024-11-12 16:49:03', '2024-11-14 10:49:03'),
-(3, 'hau', 'admin2@gmail.com', '$2y$10$eH1X2wekZK5nXYel23Tsfu8zce7Ftzcft6FguFmA6WhR2QIApMnkO', '2345678910', '../uploads/user/default.jpg', 'user', '2024-11-12 16:49:03', '2024-11-14 10:49:03'),
-(4, 'cuong', 'admin3@gmail.com', '$2y$10$eH1X2wekZK5nXYel23Tsfu8zce7Ftzcft6FguFmA6WhR2QIApMnkO', '3456789210', '../uploads/user/default.jpg', 'user', '2024-11-12 16:49:03', '2024-11-14 10:49:03');
-
-
-
+(2, 'hien', 'admin1@gmail.com', '123456', '0123456789', '../uploads/user/1732075288vl1 done (15).jpg', 'user', '2024-11-12 09:49:03', '2024-11-20 05:30:46'),
+(3, 'hau', 'admin2@gmail.com', '123456', '2345678910', '../uploads/user/1732075303DSC08884 copy.jpg', 'user', '2024-11-12 09:49:03', '2024-11-20 05:30:52'),
+(4, 'cuong', 'admin3@gmail.com', '123456', '3456789210', '../uploads/user/1732075361VL2 done (17).jpg', 'user', '2024-11-12 09:49:03', '2024-11-20 05:31:06'),
+(64, 'hieu', 'admin@gmail.com', '123456', '0364598280', '../uploads/user/1732075347DQH-30.jpg', 'user', '2024-11-12 16:49:03', '2024-11-20 05:32:05');
 
 --
 -- Indexes for dumped tables
@@ -549,13 +541,13 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `comics`
 --
 ALTER TABLE `comics`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 
 --
 -- AUTO_INCREMENT for table `comic_sales`
 --
 ALTER TABLE `comic_sales`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `comic_variants`
