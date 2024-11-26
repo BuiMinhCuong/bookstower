@@ -1,5 +1,5 @@
 <?php
-// Thêm ở đầu file navbar.php
+// models trả về dữ liẹu một lần
 require_once './models/danhmuc.php';
 $modelDanhMuc = new DanhMuc();
 $listdm = $modelDanhMuc->getAllDanhMuc();
@@ -43,8 +43,8 @@ $listdm = $modelDanhMuc->getAllDanhMuc();
                         <a href="./views/contact.php" class="nav-item nav-link">Liên hệ</a>
                     </div>
                     <div class="navbar-nav ml-auto py-0">
-                        <a href="" class="nav-item nav-link">Đăng nhập</a>
-                        <a href="" class="nav-item nav-link">Đăng ký</a>
+                    <a href="http://localhost/bookstower/clients/views/login.php" class="nav-item nav-link">Đăng nhập</a>
+                    <a href="http://localhost/bookstower/clients/views/register.php" class="nav-item nav-link">Đăng ký</a>
                     </div>
                 </div>
             </nav>

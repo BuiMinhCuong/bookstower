@@ -253,7 +253,9 @@
                             <label for="question">Your Question</label>
                             <textarea class="form-control" id="question" name="question" rows="5" placeholder="Enter your question here" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                        <a href="http://localhost/bookstower/clients/views/thanks.php">
+                        <button type="submit" onclick="Submit" class="btn btn-primary btn-block">Submit</button>
+                        </a>
                     </form>
                 </div>
             </div>

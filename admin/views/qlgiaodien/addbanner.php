@@ -37,12 +37,17 @@
         <?php } ?>
     </div>
 
-    <div class="form-group col-6">
-        <label for="Img">Chọn hình ảnh:</label>
-        <input type="file" class="form-control" id="Img" name="Img" accept="image/*" required>
-        <?php if(isset($_SESSION['error']['Img'])) { ?>
-            <p class="text-danger"><?= $_SESSION['error']['Img'] ?></p>
-        <?php } ?>
+    <div class="form-group col-6 d-flex align-items-center">
+        <div style="flex: 1;">
+            <label for="Img">Chọn hình ảnh:</label>
+            <input type="file" class="form-control" id="Img" name="Img" accept="image/*" required onchange="previewImage(this)">
+            <?php if(isset($_SESSION['error']['Img'])) { ?>
+                <p class="text-danger"><?= $_SESSION['error']['Img'] ?></p>
+            <?php } ?>
+        </div>
+        <div style="margin-left: 10px;">
+            <img id="preview" src="#" alt="Banner Preview" style="display:none; border: 2px solid #ddd; border-radius: 5px; max-width: 150px; height: auto;" />
+        </div>
     </div>
 
     <div class="form-group col-6">
@@ -60,6 +65,19 @@
     <button type="submit" class="btn btn-primary" >Thêm Banner</button>
 </form>
 
+<script>
+    function previewImage(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                var preview = document.getElementById('preview');
+                preview.src = e.target.result;
+                preview.style.display = 'block';
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
 
         </div>
       </div>
