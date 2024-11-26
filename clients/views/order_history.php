@@ -167,7 +167,9 @@ function loadHistory() {
 function checkout() {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     if (cart.length === 0) {
-        alert("Giỏ hàng của bạn đang trống!");
+        alert("Giỏ hàng của bạn đang trống , Xin mời bạn quay lại sản phẩm!");
+        event.preventDefault();  // ngăn chặn điều hướng ở thẻ a mặc định
+        window.location.href = "http://localhost/bookstower/clients/views/sanpham.php";
         return;
     }
 
@@ -198,7 +200,7 @@ function checkout() {
     loadHistory(); // Lịch sử mua hàng được cập nhật
 
     // Chuyển hướng đến trang thanh toán
-    window.location.href = "http://localhost/bookstower/clients/views/cart.php";  // Đảm bảo đúng URL trang thanh toán
+    window.location.href = "http://localhost/bookstower/clients/views/cart.php";
 }
 
 // Gắn sự kiện vào nút thanh toán
