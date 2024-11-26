@@ -40,7 +40,7 @@ $listdm = $modelDanhMuc->getAllDanhMuc();
                     <div class="navbar-nav mr-auto py-0">
                         <a href="http://localhost/bookstower/clients/" class="nav-item nav-link active">Trang chủ</a>
                         <a href="./views/sanpham.php" class="nav-item nav-link">Sản phẩm</a>
-                        <a href="http://localhost/bookstower/clients/views/contact.php" class="nav-item nav-link">Liên hệ</a>
+                        <a href="./views/contact.php" class="nav-item nav-link">Liên hệ</a>
                     </div>
                     <div class="navbar-nav ml-auto py-0">
                     <a href="http://localhost/bookstower/clients/views/login.php" class="nav-item nav-link">Đăng nhập</a>

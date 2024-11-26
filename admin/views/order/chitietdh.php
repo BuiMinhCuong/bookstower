@@ -23,10 +23,12 @@
         <label for="">Email:</label>
         <p ><?php echo $order['email']; ?></p>
     </div>
+    
     <div class="form-group">
         <label for="">Số điện thoại:</label>
         <p ><?php echo $order['phone']; ?></p>
     </div>
+    
     <div class="form-group">
         <label for="">Địa chỉ giao hàng:</label>
         <p ><?php echo $order['shipping_address']; ?></p>
