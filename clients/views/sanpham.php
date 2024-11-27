@@ -389,7 +389,7 @@ $(document).ready(function() {
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="cart.php" method="POST">
+            <form action="order_history.php" method="POST">
                 <div class="modal-body" id="cart-items">
                     <!-- Các sản phẩm sẽ được thêm vào đây bằng JavaScript -->
                 </div>
@@ -397,7 +397,7 @@ $(document).ready(function() {
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Thêm sản phẩm khác</button>
                     <form id="checkoutForm" method="POST" action="path_to_your_checkout_page">
                         <input type="hidden" id="cartData" name="cartData" value="">
-                        <button type="submit" id="checkoutBtn" class="btn btn-primary">Tiến hành thanh toán</button>
+                        <button type="submit" id="checkoutBtn" class="btn btn-primary">Giỏ hàng thanh toán</button>
                     </form>
                 </div>
             </form>
