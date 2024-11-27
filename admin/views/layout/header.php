@@ -209,12 +209,17 @@ ob_start();
 
                             <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
 
-                            <a class="nav-link" href="<?= BASE_URL_ADMIN . '?act=login-admin' ?>" onclick="return confirm(' Đăng xuất tài khoản?')"><i class="fa fa-power -off"></i>Logout</a>
+                            <a class="nav-link" href="#" onclick="return confirm('Chuyển trang đăng nhập ')"><i class="fa fa-power -off"></i>Login </a>
+                            
+
 
                         </div>
                     </div>
 
                 </div>
             </div>
+         
+            
         </header>
+        
         
