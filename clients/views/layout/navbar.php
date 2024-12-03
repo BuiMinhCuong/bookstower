@@ -38,7 +38,10 @@ $listdm = $modelDanhMuc->getAllDanhMuc();
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0">
+                      
+
                         <a href="http://localhost/bookstower/clients/" class="nav-item nav-link active">Trang chủ</a>
+
                         <a href="./views/sanpham.php" class="nav-item nav-link">Sản phẩm</a>
                         <a href="./views/contact.php" class="nav-item nav-link">Liên hệ</a>
                     </div>

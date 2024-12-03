@@ -292,8 +292,8 @@ CREATE TABLE `order_items` (
 -- Dumping data for table `order_items`
 --
 
-  INSERT INTO `order_items` (`id`, `order_id`, `comic_id`, `quantity`, `unit_price`) VALUES
-  (26, 38, 68, 2, '300000.00');
+INSERT INTO `order_items` (`id`, `order_id`, `comic_id`, `quantity`, `unit_price`) VALUES
+(26, 38, 68, 2, '300000.00');
 
 -- --------------------------------------------------------
 
@@ -375,10 +375,15 @@ CREATE TABLE `users` (
   `phone` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `avatar` varchar(255) NOT NULL,
 
+
+
+ 3acbe5935a1dca704c792a0d9657a8c6af91dcc1
   `role` enum('user','admin') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT 'user',
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
 
 
 
@@ -395,6 +400,7 @@ CREATE TABLE users (
 );
 
 (update login & register)
+
 --
 -- Dumping data for table `users`
 --
