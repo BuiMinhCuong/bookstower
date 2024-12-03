@@ -1,5 +1,6 @@
 <?php
 
+
 if (!empty($sanphamct)): ?>
     <div class="row px-xl-5">
         <div class="col-lg-5 pb-5">
@@ -76,7 +77,7 @@ if (!empty($sanphamct)): ?>
         <div class="nav nav-tabs justify-content-center border-secondary mb-4">
             <a class="nav-item nav-link active" data-toggle="tab" href="#tab-pane-1">Description</a>
             <a class="nav-item nav-link" data-toggle="tab" href="#tab-pane-2">Information</a>
-            <a class="nav-item nav-link" data-toggle="tab" href="#tab-pane-3">Reviews (0)</a>
+            <a class="nav-item nav-link" data-toggle="tab" href="#tab-pane-3">Reviews</a>
         </div>
         <div class="tab-content">
             <div class="tab-pane fade show active" id="tab-pane-1">
@@ -124,91 +125,163 @@ if (!empty($sanphamct)): ?>
             </div>
             <div class="tab-pane fade" id="tab-pane-3">
                 <div class="row">
-                    <div class="col-md-6">
-                        <h4 class="mb-4">1 review for "Colorful Stylish Shirt"</h4>
-                        <div class="media mb-4">
-                            <img src="img/user.jpg" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;">
-                            <div class="media-body">
-                                <h6>John Doe<small> - <i>01 Jan 2045</i></small></h6>
-                                <div class="text-primary mb-2">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                    <i class="far fa-star"></i>
-                                </div>
-                                <p>Diam amet duo labore stet elitr ea clita ipsum, tempor labore accusam ipsum et no at. Kasd diam tempor rebum magna dolores sed sed eirmod ipsum.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <h4 class="mb-4">Leave a review</h4>
-                        <small>Your email address will not be published. Required fields are marked *</small>
-                        <div class="d-flex my-3">
-                            <p class="mb-0 mr-2">Your Rating * :</p>
-                            <div class="text-primary">
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                        </div>
-                        <form id="commentForm" action="submit-comment.php" method="POST">
-    <input type="hidden" name="comics_id" value="1"> 
-    <input type="hidden" name="user_id" value="123"> 
+                    
+               <style>
+                /* Customize the form to ensure all fields are aligned horizontally */
+#commentForm .form-group {
+    margin-bottom: 1rem;
+}
 
-    <div class="form-group">
-        <label for="message">Your Review *</label>
-        <textarea id="message" name="Content" cols="30" rows="5" class="form-control" required></textarea>
-    </div>
+/* Adjust for textareas and inputs to fit within the grid */
+#commentForm .form-control {
+    width: 100%;
+}
 
-    <div class="form-group">
-        <label for="name">Your Name *</label>
-        <input type="text" class="form-control" id="name" name="user_name" required>
-    </div>
-
-    <div class="form-group">
-        <label for="email">Your Email *</label>
-        <input type="email" class="form-control" id="email" name="user_email" required>
-    </div>
-
-    <div class="form-group mb-0">
-        <button type="submit" class="btn btn-primary px-3">
-            Leave Your Review
-        </button>
-    </div>
-</form>
-
-
-
-
-                    </div>
-                </div>
-            </div>
+#commentForm .col-md-6, .col-md-3 {
+    display: flex;
+    flex-direction: column;
+}
+/* Thu nhỏ nút Delete */
+.delete-btn {
+    font-size: 15px; 
+    border-radius: 3px; /* Bo góc nhẹ */
+    background-color: #e74c3c; /* Màu đỏ sáng hơn */
+    border: none; /* Loại bỏ viền */
+}
+</style> 
+  
+<div class="col-md-12">
+    <h4 class="mb-4">Leave a Review</h4>
+    <p class="text-muted">Your email address will not be published. Required fields are marked <span class="text-danger">*</span>.</p>
+    
+    <!-- Rating Section -->
+    <div class="d-flex align-items-center mb-3">
+        <p class="mb-0 mr-2 font-weight-bold">Your Rating <span class="text-danger">*</span>:</p>
+        <div class="text-warning" id="rating">
+            <i class="far fa-star rating-star" data-value="1"></i>
+            <i class="far fa-star rating-star" data-value="2"></i>
+            <i class="far fa-star rating-star" data-value="3"></i>
+            <i class="far fa-star rating-star" data-value="4"></i>
+            <i class="far fa-star rating-star" data-value="5"></i>
         </div>
     </div>
+
+    <!-- Review Form -->
+    <form id="commentForm" class="p-4 rounded shadow-sm border bg-light">
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="message">Your Review <span class="text-danger">*</span></label>
+                <textarea id="message" name="Content" cols="30" rows="4" class="form-control" placeholder="Write your review..." required></textarea>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="name">Your Name <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="name" name="user_name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="email">Your Email <span class="text-danger">*</span></label>
+                <input type="email" class="form-control" id="email" name="user_email" placeholder="Enter your email" required>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Submit Review</button>
+    </form>
+</div>
+
+<!-- Comment Section -->
+<div id="commentSection" class="mt-5">
+    <h4>Comments</h4>
+    <ul id="commentsList" class="list-unstyled p-3 bg-white rounded shadow-sm border">
+        <!-- Comments will be dynamically added here -->
+    </ul>
+    <button id="seeMoreBtn" class="btn btn-outline-primary btn-sm d-block mx-auto mt-3" style="display:none;">See More</button>
 </div>
 
 <script>
-    function increaseValue() {
-        var value = parseInt(document.getElementById('quantity').value);
-        value = isNaN(value) ? 0 : value;
-        value++;
-        if(value > 1) {
-            value--;
-        document.getElementById('quantity').value = value;
-    }
 
+function increaseValue() {
+    let value = parseInt(document.getElementById('quantity').value) || 0;
+    document.getElementById('quantity').value = Math.max(value + 1, 1);
 }
-function submitForm() {
-        var form = document.getElementById('commentForm');
 
-        if (form.checkValidity()) {
-            window.location.href = 'http://localhost/bookstower/clients/?act=chitietsp&id=70';
-        } else {
-            form.reportValidity();
-        }
+
+// function submitForm() {
+//     const form = document.getElementById('commentForm');
+//     form.checkValidity() ? window.location.href = 'http://localhost/bookstower/clients/?act=chitietsp&id=70' : form.reportValidity();
+// }
+
+// Lắng nghe sự kiện submit của form
+document.getElementById('commentForm').addEventListener('submit', function(e) {
+    e.preventDefault(); 
+
+    const name = document.getElementById('name').value, 
+          email = document.getElementById('email').value, 
+          content = document.getElementById('message').value;
+
+    if (!name || !email || !content) return alert('Please fill out all required fields.');
+
+    const newComment = { name, email, content, timestamp: new Date().toLocaleString() };
+    let comments = JSON.parse(localStorage.getItem('comments')) || [];
+    comments.push(newComment);
+    localStorage.setItem('comments', JSON.stringify(comments));
+
+    displayComments(); 
+    document.getElementById('commentForm').reset();
+});
+
+// Hàm hiển thị bình luận
+function displayComments() {
+    const commentsList = document.getElementById('commentsList');
+    const comments = JSON.parse(localStorage.getItem('comments')) || [];
+
+    // Hiển thị 3 bình luận gần nhất
+    const recentComments = comments.slice(-3); 
+    commentsList.innerHTML = recentComments.map((comment, index) => `
+        <li class="mb-3 justify-content-between align-items-center d-flex" id="comment-${index}">
+    <div>
+        <strong>${comment.name}</strong> (${comment.email}) 
+        <small class="text-muted">on ${comment.timestamp}</small>
+        <p>${comment.content}</p>
+    </div>
+    <button class="btn btn-danger btn-sm delete-btn" onclick="deleteComment(${index})">Delete</button>
+</li>
+
+    `).join('');
+
+    // Hiển thị nút "See More" nếu có thêm bình luận
+    const seeMoreBtn = document.getElementById('seeMoreBtn');
+    if (comments.length > 3) {
+        seeMoreBtn.style.display = 'inline-block';
+        seeMoreBtn.onclick = function() {
+            displayAllComments();
+            seeMoreBtn.style.display = 'none';
+        };
+    } else {
+        seeMoreBtn.style.display = 'none';
     }
-  
+}
+
+// Hàm hiển thị tất cả bình luận
+function displayAllComments() {
+    const commentsList = document.getElementById('commentsList');
+    const comments = JSON.parse(localStorage.getItem('comments')) || [];
+    commentsList.innerHTML = comments.map((comment, index) => `
+        <li class="mb-3 d-flex justify-content-between align-items-center" id="comment-${index}">
+            <div><strong>${comment.name}</strong> (${comment.email}) <small class="text-muted">on ${comment.timestamp}</small>
+            <p>${comment.content}</p></div>
+            <button class="btn btn-danger btn-sm" onclick="deleteComment(${index})">Delete</button>
+        </li>
+    `).join('');
+}
+
+// Hàm xóa bình luận
+function deleteComment(index) {
+    let comments = JSON.parse(localStorage.getItem('comments')) || [];
+    comments.splice(index, 1);
+    localStorage.setItem('comments', JSON.stringify(comments));
+    displayComments();
+}
+
+// Hiển thị bình luận khi trang được tải
+window.onload = displayComments;
 </script>
