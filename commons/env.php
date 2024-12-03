@@ -1,8 +1,4 @@
 <?php
-
-
-
-
 define('BASE_URL' , 'http://localhost/BOOKSTOWER/clients/');
 define('BASE_URL_ADMIN' , 'http://localhost/BOOKSTOWER/admin/');
 

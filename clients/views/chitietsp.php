@@ -154,23 +154,35 @@ if (!empty($sanphamct)): ?>
                                 <i class="far fa-star"></i>
                             </div>
                         </div>
-                        <form>
-                            <div class="form-group">
-                                <label for="message">Your Review *</label>
-                                <textarea id="message" cols="30" rows="5" class="form-control"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="name">Your Name *</label>
-                                <input type="text" class="form-control" id="name">
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Your Email *</label>
-                                <input type="email" class="form-control" id="email">
-                            </div>
-                            <div class="form-group mb-0">
-                                <input type="submit" value="Leave Your Review" class="btn btn-primary px-3">
-                            </div>
-                        </form>
+                        <form id="commentForm" action="submit-comment.php" method="POST">
+    <input type="hidden" name="comics_id" value="1"> 
+    <input type="hidden" name="user_id" value="123"> 
+
+    <div class="form-group">
+        <label for="message">Your Review *</label>
+        <textarea id="message" name="Content" cols="30" rows="5" class="form-control" required></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="name">Your Name *</label>
+        <input type="text" class="form-control" id="name" name="user_name" required>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Your Email *</label>
+        <input type="email" class="form-control" id="email" name="user_email" required>
+    </div>
+
+    <div class="form-group mb-0">
+        <button type="submit" class="btn btn-primary px-3">
+            Leave Your Review
+        </button>
+    </div>
+</form>
+
+
+
+
                     </div>
                 </div>
             </div>
@@ -183,16 +195,20 @@ if (!empty($sanphamct)): ?>
         var value = parseInt(document.getElementById('quantity').value);
         value = isNaN(value) ? 0 : value;
         value++;
+        if(value > 1) {
+            value--;
         document.getElementById('quantity').value = value;
     }
 
-    function decreaseValue() {
-        var value = parseInt(document.getElementById('quantity').value);
-        value = isNaN(value) ? 0 : value;
-        if(value > 1) {
-            value--;
-            document.getElementById('quantity').value = value;
+}
+function submitForm() {
+        var form = document.getElementById('commentForm');
+
+        if (form.checkValidity()) {
+            window.location.href = 'http://localhost/bookstower/clients/?act=chitietsp&id=70';
+        } else {
+            form.reportValidity();
         }
     }
+  
 </script>
-dentail

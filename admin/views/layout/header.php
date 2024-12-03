@@ -114,18 +114,18 @@ ob_start();
                                 <span class="count bg-danger">3</span>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="notification">
-                                <p class="red">You have 3 Notification</p>
+                                <p class="red">bạn có 5 thông báo mới</p>
                                 <a class="dropdown-item media" href="#">
                                     <i class="fa fa-check"></i>
-                                    <p>Server #1 overloaded.</p>
+                                    <p>Sever bị truy cập từ nơi khác</p>
                                 </a>
                                 <a class="dropdown-item media" href="#">
                                     <i class="fa fa-info"></i>
-                                    <p>Server #2 overloaded.</p>
+                                    <p>Server có bản cập nhật mới</p>
                                 </a>
                                 <a class="dropdown-item media" href="#">
                                     <i class="fa fa-warning"></i>
-                                    <p>Server #3 overloaded.</p>
+                                    <p>Vui lòng gia hạn gói hosting</p>
                                 </a>
                             </div>
                         </div>
@@ -133,40 +133,64 @@ ob_start();
                         <div class="dropdown for-message">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="message" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fa fa-envelope"></i>
-                                <span class="count bg-primary">4</span>
+                                <span class="count bg-primary">7</span>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="message">
-                                <p class="red">You have 4 Mails</p>
+                                <p class="red">You have 19 Mails</p>
                                 <a class="dropdown-item media" href="#">
-                                    <span class="photo media-left"><img alt="avatar" src="assets/images/avatar/1.jpg"></span>
+                                    <span class="photo media-left"><img alt="avatar" src="https://th.bing.com/th?id=OIP.QPUkFHcYgdfE0n-jLgX6XAHaMP&w=194&h=321&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2"></span>
                                     <div class="message media-body">
-                                        <span class="name float-left">Jonathan Smith</span>
-                                        <span class="time float-right">Just now</span>
-                                        <p>Hello, this is an example msg</p>
+                                        <span class="name float-left">cuong</span>
+                                        <span class="time float-right"> vừa xong</span>
+                                        <p>Tôi có chút trúc trặc với sản phẩm của bạn</p>
                                     </div>
                                 </a>
                                 <a class="dropdown-item media" href="#">
-                                    <span class="photo media-left"><img alt="avatar" src="assets/images/avatar/2.jpg"></span>
+                                    <span class="photo media-left"><img alt="avatar" src="https://th.bing.com/th?id=OIP.NMdnosNp3U_c4S04KbP0VwHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2"></span>
                                     <div class="message media-body">
-                                        <span class="name float-left">Jack Sanders</span>
-                                        <span class="time float-right">5 minutes ago</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                                        <span class="name float-left">Hiển</span>
+                                        <span class="time float-right">2 ngày trước</span>
+                                        <p>LSản phẩm rats tuyệt</p>
                                     </div>
                                 </a>
                                 <a class="dropdown-item media" href="#">
-                                    <span class="photo media-left"><img alt="avatar" src="assets/images/avatar/3.jpg"></span>
+                                    <span class="photo media-left"><img alt="avatar" src="https://th.bing.com/th?id=OIP.cEYWwR0uQIv6l7IsKbFjEQHaLt&w=198&h=314&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2"></span>
                                     <div class="message media-body">
-                                        <span class="name float-left">Cheryl Wheeler</span>
-                                        <span class="time float-right">10 minutes ago</span>
-                                        <p>Hello, this is an example msg</p>
+                                        <span class="name float-left">Hậu</span>
+                                        <span class="time float-right">5 ngày trước</span>
+                                        <p>Cảm ơn vì sản phảm rất tuyệt</p>
                                     </div>
                                 </a>
                                 <a class="dropdown-item media" href="#">
-                                    <span class="photo media-left"><img alt="avatar" src="assets/images/avatar/4.jpg"></span>
+                                    <span class="photo media-left"><img alt="avatar" src="https://th.bing.com/th?id=OIP.gTqXCGsCzZh0PScwn45QdgHaJ4&w=216&h=288&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2"></span>
                                     <div class="message media-body">
-                                        <span class="name float-left">Rachel Santos</span>
-                                        <span class="time float-right">15 minutes ago</span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur</p>
+                                        <span class="name float-left">HIẾu</span>
+                                        <span class="time float-right">2 phút trước</span>
+                                        <p>Tôi không biết cách để đổi mật khẩu xin hãy giúp tôi</p>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item media" href="#">
+                                    <span class="photo media-left"><img alt="avatar" src="https://th.bing.com/th?id=OIP.QPUkFHcYgdfE0n-jLgX6XAHaMP&w=194&h=321&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2"></span>
+                                    <div class="message media-body">
+                                        <span class="name float-left">cuong</span>
+                                        <span class="time float-right"> vừa xong</span>
+                                        <p>Tôi có chút trúc trặc với sản phẩm của bạn</p>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item media" href="#">
+                                    <span class="photo media-left"><img alt="avatar" src="https://th.bing.com/th?id=OIP.QPUkFHcYgdfE0n-jLgX6XAHaMP&w=194&h=321&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2"></span>
+                                    <div class="message media-body">
+                                        <span class="name float-left">Trình</span>
+                                        <span class="time float-right"> vừa xong</span>
+                                        <p>Sản phẩm hình như thiếu </p>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item media" href="#">
+                                    <span class="photo media-left"><img alt="avatar" src="https://th.bing.com/th?id=OIP.QPUkFHcYgdfE0n-jLgX6XAHaMP&w=194&h=321&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2"></span>
+                                    <div class="message media-body">
+                                        <span class="name float-left">Lực</span>
+                                        <span class="time float-right"> 20 phút trước</span>
+                                        <p>Xin hãy giúp tôi,tôi không biết cách thanh toán</p>
                                     </div>
                                 </a>
                             </div>
