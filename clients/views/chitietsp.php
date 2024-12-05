@@ -127,12 +127,10 @@ if (!empty($sanphamct)): ?>
                 <div class="row">
                     
                <style>
-                /* Customize the form to ensure all fields are aligned horizontally */
 #commentForm .form-group {
     margin-bottom: 1rem;
 }
 
-/* Adjust for textareas and inputs to fit within the grid */
 #commentForm .form-control {
     width: 100%;
 }
@@ -144,9 +142,9 @@ if (!empty($sanphamct)): ?>
 /* Thu nhỏ nút Delete */
 .delete-btn {
     font-size: 15px; 
-    border-radius: 3px; /* Bo góc nhẹ */
-    background-color: #e74c3c; /* Màu đỏ sáng hơn */
-    border: none; /* Loại bỏ viền */
+    border-radius: 3px; 
+    background-color: #e74c3c; 
+    border: none; 
 }
 </style> 
   

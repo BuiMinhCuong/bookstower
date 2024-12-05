@@ -35,7 +35,7 @@
         <div class="row bg-secondary py-2 px-xl-5">
             <div class="col-lg-6 d-none d-lg-block">
                 <div class="d-inline-flex align-items-center">
-                    <a class="text-dark" href="http://localhost/bookstower/clients/views/contact.php">Hỗ trợ</a>
+                    <a class="text-dark" href="http://localhost/bookstower/clients/?act=contact">Hỗ trợ</a>
                 </div>
             </div>
             <div class="col-lg-6 text-center text-lg-right">
