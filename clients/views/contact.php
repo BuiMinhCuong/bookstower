@@ -1,13 +1,3 @@
-<div class="">
-    <a href="http://localhost/bookstower/clients/">
-
-        <button onclick="Submit">Home</button>
-
-    </a>
-
-</div>
-
-
 <style>
     .loader {
         --duration: 3s;
@@ -253,10 +243,8 @@
                             <label for="question">Your Question</label>
                             <textarea class="form-control" id="question" name="question" rows="5" placeholder="Enter your question here" required></textarea>
                         </div>
-                        <a href="http://localhost/bookstower/clients/views/thanks.php">
-                        <button type="submit" onclick="Submit" class="btn btn-primary btn-block">Submit</button>
-                        </a>
-                    </form>
+                        <a class="btn btn-primary btn-block" href="http://localhost/bookstower/clients/views/thanks.php">Submit</a>
+                        </form>
                 </div>
             </div>
         </div>

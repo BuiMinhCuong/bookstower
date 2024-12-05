@@ -114,6 +114,7 @@ $(document).ready(function() {
         });
     });
 
+    
     // Thêm sản phẩm vào giỏ hàng
     $(".add-to-cart").on("click", function() {
         const productName = $(this).data("name");
@@ -181,7 +182,7 @@ $(document).ready(function() {
 </head>
 <body>
     <!-- Page Header Start -->
-    <div class="container-fluid bg-secondary mb-5">
+    <!-- <div class="container-fluid bg-secondary mb-5">
         <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
             <h1 class="font-weight-semi-bold text-uppercase mb-3">Bookstower</h1>
             <div class="d-inline-flex">
@@ -190,7 +191,7 @@ $(document).ready(function() {
                 <p class="m-0">Danh sách sản phẩm hiện có</p>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Shop Start -->
     <div class="container-fluid pt-5">
@@ -397,8 +398,8 @@ $(document).ready(function() {
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Thêm sản phẩm khác</button>
                     <form id="checkoutForm" method="POST" action="path_to_your_checkout_page">
                         <input type="hidden" id="cartData" name="cartData" value="">
-                        <button type="submit" id="checkoutBtn" class="btn btn-primary">Giỏ hàng thanh toán</button>
-                    </form>
+                        <a href="http://localhost/bookstower/clients/views/order_history.php" id="checkoutBtn" class="btn btn-primary">Giỏ hàng thanh toán</a>
+                        </form>
                 </div>
             </form>
         </div>
@@ -407,7 +408,7 @@ $(document).ready(function() {
 </div>
 
 <!-- Footer -->
-<div class="container-fluid bg-dark text-white mt-5 py-5">
+<!-- <div class="container-fluid bg-dark text-white mt-5 py-5">
     <div class="row px-xl-5">
         <div class="col-lg-6 col-md-6 mb-5">
             <h5 class="font-weight-bold text-white mb-4">Về chúng tôi</h5>
@@ -420,7 +421,7 @@ $(document).ready(function() {
             <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-2"></i>+84 123 456 789</p>
         </div>
     </div>
-</div>
+</div> -->
 <!-- Footer End -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 

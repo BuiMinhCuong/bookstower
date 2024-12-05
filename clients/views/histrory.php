@@ -100,9 +100,11 @@
                 <tbody id="cartDetails"></tbody>
             </table>
         </div>
+            <a class="back-button" href="http://localhost/bookstower/clients/?act=sanpham#">
+                <span>Quay lại trang sản phẩm</span>
 
-        <button class="back-button" onclick="window.location.href='sanpham.php'">
-            <span>Quay lại trang sản phẩm</span>
+             </a>
+        <button >
         </button>
     </div>
 

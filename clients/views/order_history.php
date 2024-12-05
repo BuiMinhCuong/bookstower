@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lịch sử mua hàng</title>
@@ -63,7 +65,7 @@
     <div style="text-align: right; font-size: 1.2rem; font-weight: bold;">
         Tổng tiền: <span id="total-price">0 VND</span>
     </div>
-    <a href="http://localhost/bookstower/clients/views/sanpham.php">
+    <a href="http://localhost/bookstower/clients/?act=sanpham#">
         <button class="btn">Quay lại trang sản phẩm</button>
     </a>
     <a href="http://localhost/bookstower/clients/views/cart.php">
@@ -81,6 +83,7 @@
                 <th>Giá</th>
                 <th>Tổng tiền</th>
                 <th>Ngày mua</th>
+                <th>Hành động</th>
             </tr>
         </thead>
         <tbody>
@@ -126,18 +129,17 @@
         btn.addEventListener("click", (e) => {
             const index = e.target.getAttribute("data-index");
             cart.splice(index, 1); // Xóa sản phẩm khỏi giỏ hàng
-            localStorage.setItem("cart", JSON.stringify(cart)); // Cập nhật localStorage
+            localStorage.setItem("cart", JSON.stringify(cart)); 
             loadCart(); // Tải lại giỏ hàng
         });
     });
 }
 
         // Hàm tải lịch sử mua hàng từ localStorage
-       // Hàm tải lịch sử mua hàng từ localStorage với giới hạn
-function loadHistory() {
+       function loadHistory() {
     let history = JSON.parse(localStorage.getItem("history")) || [];
     const historyTable = document.querySelector("#history-table tbody");
-    historyTable.innerHTML = ""; // Xóa nội dung cũ
+    historyTable.innerHTML = ""; 
 
     const historyLimit = 10; // Giới hạn số lượng lịch sử hiển thị 
 
@@ -158,10 +160,32 @@ function loadHistory() {
             <td>${item.price.toLocaleString()} VND</td>
             <td>${(item.price * item.quantity).toLocaleString()} VND</td>
             <td>${item.date}</td>
+            <td><i class="fas fa-eye view-icon" data-index="${index}" onclick="viewDetails(${index})"></i></td>
         `;
         historyTable.appendChild(row);
     });
 }
+
+// Hàm xử lý icon mắt
+function viewDetails(index) {
+    let history = JSON.parse(localStorage.getItem("history")) || [];
+    const item = history[index];
+    Swal.fire({
+        title: 'Thông tin sản phẩm', // Tiêu đề của thông báo
+        html: `
+            Sản phẩm: ${item.name}<br>
+            Số lượng: ${item.quantity}<br>
+            Giá tiền: ${item.price.toLocaleString()} VND<br>
+            Tổng giá: ${(item.price * item.quantity).toLocaleString()} VND<br>
+            Ngày giao dịch: ${item.date}
+        `,
+        icon: 'info',
+        confirmButtonText: 'Đồng ý'
+    });
+}
+
+
+
 
 // Hàm xử lý thanh toán
 function checkout() {
@@ -169,7 +193,7 @@ function checkout() {
     if (cart.length === 0) {
         alert("Giỏ hàng của bạn đang trống , Xin mời bạn quay lại sản phẩm!");
         event.preventDefault();  // ngăn chặn điều hướng ở thẻ a mặc định
-        window.location.href = "http://localhost/bookstower/clients/views/sanpham.php";
+        window.location.href = "http://localhost/bookstower/clients/?act=sanpham";
         return;
     }
 
@@ -196,8 +220,8 @@ function checkout() {
     alert("Tiếp tục thanh toán!");
 
     // Cập nhật lại giỏ hàng và lịch sử
-    loadCart(); // Giỏ hàng vẫn giữ nguyên
-    loadHistory(); // Lịch sử mua hàng được cập nhật
+    loadCart(); // Giỏ hàng giữ nguyên
+    loadHistory(); // Lịch sử mua hàng cập nhật
 
     // Chuyển hướng đến trang thanh toán
     window.location.href = "http://localhost/bookstower/clients/views/cart.php";
@@ -210,5 +234,7 @@ document.getElementById("checkout-btn").addEventListener("click", checkout);
         loadCart();
         loadHistory();
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
 </html>
