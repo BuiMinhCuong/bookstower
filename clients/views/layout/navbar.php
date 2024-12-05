@@ -15,10 +15,10 @@ $listdm = $modelDanhMuc->getAllDanhMuc();
                     <h6 class="m-0">Danh mục sản phẩm</h6>
                     <i class="fa fa-angle-down text-dark"></i>
                 </button>
-                <nav class="position-absolute navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0" id="category-menu" style="display: none;">
+                <nav class="position-absolute navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0" id="category-menu" ">
                     <div class="navbar-nav w-100 overflow-hidden" style="height: 410px">
                         <?php foreach($listdm as $danhmuc): ?>
-                            <a href="<?php echo $danhmuc['id']; ?>" class="nav-item nav-link">
+                            <a href="#" class="nav-item nav-link">
                                 <?php echo $danhmuc['name']; ?>
                             </a>
                         <?php endforeach; ?>

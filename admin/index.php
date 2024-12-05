@@ -64,6 +64,7 @@ match ($act) {
 
     //home
     '/' => $home->views_home(),
+    'thongke'=> $home->thongke(),
 
 
 

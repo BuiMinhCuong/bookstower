@@ -55,7 +55,7 @@
                 </li>
                 
                 <li class="menu-item-has-children dropdown">
-                    <a href="http://localhost/BOOKSTOWER/admin/" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                    <a href="?act=thongke" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
                         <i class="menu-icon fa fa-line-chart" style="font-size: 15px; margin-right: 10px;"></i>Thống kê
                     </a>
                 </li>
