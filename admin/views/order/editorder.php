@@ -27,6 +27,7 @@
                                 <input type="text" class="form-control" name="phone" 
                                        value="<?php echo htmlspecialchars($order['phone']); ?>" readonly>
                             </div>
+                            
 
                             <!-- Tổng tiền (total_amount) -->
                             <div class="form-group">

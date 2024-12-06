@@ -7,7 +7,7 @@ $listdm = $modelDanhMuc->getAllDanhMuc();
 <!-- Navbar Start -->
 <div class="container-fluid mb-5">
     <div class="row border-top px-xl-5">
-        <div class="col-lg-3 d-none d-lg-block">
+    <div class="col-lg-3 d-none d-lg-block">
             <div class="category-dropdown">
                 <button class="btn shadow-none d-flex align-items-center justify-content-between bg-primary text-white w-100" 
                    onclick="toggleMenu()"
@@ -15,10 +15,10 @@ $listdm = $modelDanhMuc->getAllDanhMuc();
                     <h6 class="m-0">Danh mục sản phẩm</h6>
                     <i class="fa fa-angle-down text-dark"></i>
                 </button>
-                <nav class="position-absolute navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0" id="category-menu" style="display: none;">
+                <nav class="position-absolute navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0" id="category-menu" ">
                     <div class="navbar-nav w-100 overflow-hidden" style="height: 410px">
                         <?php foreach($listdm as $danhmuc): ?>
-                            <a href="<?php echo $danhmuc['id']; ?>" class="nav-item nav-link">
+                            <a href="#" class="nav-item nav-link">
                                 <?php echo $danhmuc['name']; ?>
                             </a>
                         <?php endforeach; ?>
@@ -39,13 +39,14 @@ $listdm = $modelDanhMuc->getAllDanhMuc();
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0">
                         <a href="http://localhost/bookstower/clients/" class="nav-item nav-link active">Trang chủ</a>
-                        <a href="./views/sanpham.php" class="nav-item nav-link">Sản phẩm</a>
-                        <a href="http://localhost/bookstower/clients/views/contact.php" class="nav-item nav-link">Liên hệ</a>
-                    </div>
-                    <div class="navbar-nav ml-auto py-0">
-                    <a href="http://localhost/bookstower/clients/views/login.php" class="nav-item nav-link">Đăng nhập</a>
-                    <a href="http://localhost/bookstower/clients/views/register.php" class="nav-item nav-link">Đăng ký</a>
-                    </div>
+                        <a href="?act=sanpham" class="nav-item nav-link">Sản phẩm</a>
+                        <a href="?act=contact" class="nav-item nav-link">Liên hệ</a>
+                        </div>
+                        <div class="navbar-nav ml-auto py-0">
+                         <a href="http://localhost/bookstower/clients/views/login.php">Đăng nhập/</a>
+                         <a href="http://localhost/bookstower/clients/views/register.php">Đăng ký</a>
+                        </div>
+
                 </div>
             </nav>
             <div id="header-carousel" class="carousel slide" data-ride="carousel">

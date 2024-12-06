@@ -6,7 +6,7 @@ class CartController {
     private $productModel;
 
     public function __construct($pdo) {
-        $this->productModel = new Product($pdo);
+        $this->productModel = new $pdo;
     }
 
     public function viewProducts() {
