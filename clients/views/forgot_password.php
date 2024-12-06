@@ -82,6 +82,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             margin-top: 15px;
             font-size: 14px;
         }
+        button.btn, a.btn {
+            display: inline-block;
+            background: #007bff;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+        button.btn:hover, a.btn:hover {
+            background: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -91,6 +105,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <?php if ($found): ?>
                 <p class="message">Tên đăng nhập: <strong><?= htmlspecialchars($usernameFound); ?></strong></p>
                 <p class="message">Mật khẩu: <strong><?= htmlspecialchars($passwordFound); ?></strong></p>
+                <button type="submit" class="btn"> <a href="http://localhost/bookstower/clients/views/login.php">Quay lại trang đăng nhập</a> </button>
             <?php else: ?>
                 <p class="message">Email không tồn tại trong hệ thống.</p>
             <?php endif; ?>
@@ -101,6 +116,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <button type="submit" class="btn">Gửi yêu cầu</button>
             </form>
         <?php endif; ?>
+        
     </div>
 </body>
 </html>
