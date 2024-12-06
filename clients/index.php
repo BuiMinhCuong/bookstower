@@ -33,7 +33,7 @@ switch ($action) {
 
     case 'contact':
         $home->views_contact();
-        break;
+        break;  
 
 
     default:

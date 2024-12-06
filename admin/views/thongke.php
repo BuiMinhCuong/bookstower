@@ -98,35 +98,35 @@
                 <tr>
                     <td>hieu</td>
                     <td>01/01/2024</td>
-                    <td>Sản phẩm A</td>
+                    <td>Truyện 1</td>
                     <td>2</td>
                     <td>1.500.000 đ</td>
                 </tr>
                 <tr>
                     <td>cuong</td>
                     <td>03/01/2024</td>
-                    <td>Sản phẩm B</td>
+                    <td>STRuyện 2</td>
                     <td>1</td>
                     <td>1.000.000 đ</td>
                 </tr>
                 <tr>
                     <td>hien</td>
                     <td>05/01/2024</td>
-                    <td>Sản phẩm C</td>
+                    <td>Gumdam 2</td>
                     <td>3</td>
                     <td>2.400.000 đ</td>
                 </tr>
                 <tr>
                     <td>hau</td>
                     <td>10/01/2024</td>
-                    <td>Sản phẩm A</td>
+                    <td>Gundam 1</td>
                     <td>5</td>
                     <td>3.750.000 đ</td>
                 </tr>
                 <tr>
                     <td>hieu</td>
                     <td>15/01/2024</td>
-                    <td>Sản phẩm B</td>
+                    <td></td>
                     <td>4</td>
                     <td>4.000.000 đ</td>
                 </tr>

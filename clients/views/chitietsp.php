@@ -139,7 +139,7 @@ if (!empty($sanphamct)): ?>
     display: flex;
     flex-direction: column;
 }
-/* Thu nhỏ nút Delete */
+/* Thu nhỏ nút Delete */    
 .delete-btn {
     font-size: 15px; 
     border-radius: 3px; 
@@ -241,7 +241,7 @@ function displayComments() {
         <small class="text-muted">on ${comment.timestamp}</small>
         <p>${comment.content}</p>
     </div>
-    <button class="btn btn-danger btn-sm delete-btn" onclick="deleteComment(${index})">Delete</button>
+
 </li>
 
     `).join('');

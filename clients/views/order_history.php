@@ -167,6 +167,7 @@
 }
 
 // Hàm xử lý icon mắt
+    
 function viewDetails(index) {
     let history = JSON.parse(localStorage.getItem("history")) || [];
     const item = history[index];
