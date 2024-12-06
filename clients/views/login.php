@@ -2,9 +2,7 @@
 session_start();
 
 // Lấy danh sách tài khoản
-$users = isset($_SESSION['users']) ? $_SESSION['users'] : [
-    
-];
+$users = isset($_SESSION['users']) ? $_SESSION['users'] : [];
 
 // Xử lý đăng nhập
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -25,6 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,6 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             align-items: center;
             height: 100vh;
         }
+
         .login-container {
             background: #fff;
             padding: 30px;
@@ -48,11 +48,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             width: 400px;
             text-align: center;
         }
+
         h2 {
             margin-bottom: 20px;
             font-size: 24px;
             color: #333;
         }
+
         label {
             display: block;
             margin-bottom: 8px;
@@ -60,7 +62,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             color: #555;
             text-align: left;
         }
-        input[type="text"], input[type="password"] {
+
+        input[type="text"],
+        input[type="password"] {
             width: 100%;
             padding: 10px;
             margin-bottom: 15px;
@@ -68,7 +72,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             border-radius: 5px;
             font-size: 14px;
         }
-        button.btn, a.btn {
+
+        button.btn,
+        a.btn {
             display: inline-block;
             background: #007bff;
             color: #fff;
@@ -79,32 +85,40 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             border: none;
             cursor: pointer;
         }
-        button.btn:hover, a.btn:hover {
+
+        button.btn:hover,
+        a.btn:hover {
             background: #0056b3;
         }
+
         .error-message {
             color: red;
             font-size: 14px;
             margin-bottom: 15px;
         }
+
         .success-message {
             color: green;
             font-size: 16px;
             margin-bottom: 20px;
         }
+
         .links {
             margin-top: 20px;
             font-size: 14px;
         }
+
         .links a {
             color: #007bff;
             text-decoration: none;
         }
+
         .links a:hover {
             text-decoration: underline;
         }
     </style>
 </head>
+
 <body>
     <div class="login-container">
         <?php if (isset($success) && $success): ?>
@@ -118,17 +132,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <form method="POST" action="">
                 <label for="username">Tên đăng nhập:</label>
                 <input type="text" id="username" name="username" placeholder="Nhập tên đăng nhập" required>
-                
+
                 <label for="password">Mật khẩu:</label>
                 <input type="password" id="password" name="password" placeholder="Nhập mật khẩu" required>
-                
+
                 <button type="submit" class="btn">Đăng Nhập</button>
             </form>
             <div class="links">
                 <a href="register.php">Chưa có tài khoản? Đăng ký tại đây</a><br>
                 <a href="forgot_password.php">Quên mật khẩu?</a>
+                <a href="change_password.php">Đổi mật khẩu</a>
             </div>
         <?php endif; ?>
     </div>
 </body>
+
 </html>
