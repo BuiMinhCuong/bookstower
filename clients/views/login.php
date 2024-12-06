@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         .login-container {
-<<<<<<< HEAD
+
             background: #fff;
             padding: 30px;
             border-radius: 10px;
@@ -68,19 +68,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         input[type="text"],
         input[type="password"] {
-=======
+
             background: rgba(255, 255, 255, 0.9);
             padding: 40px;
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
->>>>>>> 1e9f4d2fed407b1e9b4fbd601a315620728bbd9d
+
             width: 100%;
             max-width: 500px;
             text-align: center;
             animation: slideUp 0.7s ease-out;
             z-index: 1;
         }
-<<<<<<< HEAD
 
         button.btn,
         a.btn {
@@ -98,7 +97,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         button.btn:hover,
         a.btn:hover {
             background: #0056b3;
-=======
         @keyframes slideUp {
             0% { transform: translateY(20px); opacity: 0; }
             100% { transform: translateY(0); opacity: 1; }
@@ -112,7 +110,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         .btn-primary:hover {
             background-color: #0056b3;
             border-color: #0056b3;
->>>>>>> 1e9f4d2fed407b1e9b4fbd601a315620728bbd9d
+
         }
 
         .error-message {
@@ -173,6 +171,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
             border-color: #007bff;
         }
+    }
     </style>
 </head>
 
@@ -189,7 +188,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <p class="error-message"><?= htmlspecialchars($error); ?></p>
             <?php endif; ?>
             <form method="POST" action="">
-<<<<<<< HEAD
+
                 <label for="username">Tên đăng nhập:</label>
                 <input type="text" id="username" name="username" placeholder="Nhập tên đăng nhập" required>
 
@@ -197,7 +196,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <input type="password" id="password" name="password" placeholder="Nhập mật khẩu" required>
 
                 <button type="submit" class="btn">Đăng Nhập</button>
-=======
                 <div class="mb-3">
                     <label for="username" class="form-label">Tên đăng nhập:</label>
                     <div class="input-group">
@@ -213,7 +211,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary w-100">Đăng Nhập</button>
->>>>>>> 1e9f4d2fed407b1e9b4fbd601a315620728bbd9d
+
             </form>
             <div class="links mt-3">
                 <a href="register.php">Chưa có tài khoản? Đăng ký tại đây</a><br>
