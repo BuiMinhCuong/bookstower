@@ -6,10 +6,10 @@
             <div class="footer-inner bg-white">
                 <div class="row">
                     <div class="col-sm-6" style="padding-left:300px ;">
-                        Copyright &copy; 2024 Ela Admin
+                         &copy; Hiếu admin
                     </div>
                     <div class="col-sm-6 text-right">
-                        Designed by <a href="https://colorlib.com">Colorlib</a>
+                        Designed by <a href="https://colorlib.com">Hiếu </a>
                     </div>
                 </div>
             </div>
